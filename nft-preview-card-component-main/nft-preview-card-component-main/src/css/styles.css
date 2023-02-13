@@ -27,17 +27,52 @@ body{
     background-color: var(--very-dark-blue-card);
     border-radius: 15px;
 }
-.content > img {
+.img-card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.img-card > img{
     overflow: hidden;
     border-radius: 10px;
 }
-.content > h1{
+.img-card:hover .image-cover{
+    background: var(--cyan);
+}
+
+.image-cover{
+    position: absolute;
+    height: 300px;
+    width: 300px;
+    opacity: 0.4;
+    transition: background-color 200ms ease-in;
+    cursor: pointer;
+    border-radius: 10px;
+}
+.icon-view{
+    position: absolute;
+    left: 48%;
+    opacity: 0;
+    transition: opacity 200ms ease-in;
+}
+.img-card:hover .icon-view{
+    opacity: 1;
+}
+ h1{
     color: var(--white);
     margin-bottom: 10px;
 }
-.content > h1 + p {
+h1 + p {
     margin-top: 1px;
     color: var(--soft-blue);
+}
+ h1:hover {
+    cursor: pointer;
+    color: var(--cyan);
+}
+b:hover{
+    cursor: pointer;
+    color: var(--cyan);
 }
 .details{
     display: flex;
@@ -74,8 +109,4 @@ svg{
 }
 .created-by > span{
     color: var(--soft-blue);
-}
-
-@media(mix-width:1440px){
-    
 }
